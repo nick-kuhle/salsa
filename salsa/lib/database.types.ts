@@ -49,18 +49,21 @@ export type Database = {
         Row: {
           created_at: string
           id: string
+          strain: string
           title: string
           user_id: string
         }
         Insert: {
           created_at?: string
           id?: string
+          strain: string
           title: string
           user_id: string
         }
         Update: {
           created_at?: string
           id?: string
+          strain?: string
           title?: string
           user_id?: string
         }
@@ -92,6 +95,24 @@ export type Database = {
           id?: string
           name?: string
           username?: string
+        }
+        Relationships: []
+      }
+      strains: {
+        Row: {
+          id: number
+          likes: number | null
+          name: string
+        }
+        Insert: {
+          id?: number
+          likes?: number | null
+          name: string
+        }
+        Update: {
+          id?: number
+          likes?: number | null
+          name?: string
         }
         Relationships: []
       }
