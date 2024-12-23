@@ -8,9 +8,10 @@ export default function NewPost({ user }: { user: User }) {
   const addPost = async (formData: FormData) => {
     "use server"
     const title = String(formData.get("title"));
+    const strain = String(formData.get("strain"));
     const supabase = createServerActionClient<Database>({ cookies });
 
-    await supabase.from("posts").insert({ title, user_id: user.id});
+    await supabase.from("posts").insert({ title, strain, user_id: user.id});
   };
 
   return (
@@ -26,9 +27,14 @@ export default function NewPost({ user }: { user: User }) {
           />
         </div>
         <input
+          name="strain"
+          className="bg-inherit flex-1 ml-2 text-2xl leading-loose placeholder-gray-500 px-2"
+          placeholder="Strain"
+        />
+        <input
           name="title"
           className="bg-inherit flex-1 ml-2 text-2xl leading-loose placeholder-gray-500 px-2"
-          placeholder="What's saucy?"
+          placeholder="Was it salty or what?"
         />
       </div>
     </form>
