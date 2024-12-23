@@ -59,10 +59,10 @@ export default function Posts({ posts }: { posts: PostWithAuthor[] }) {
           <span className="font-bold">{post.author.name}</span>
           <span className="text-sm ml-2 text-gray-400">{post.author.username}</span>
         </p>
-        <span className="text-xl text-bold justify-center">
-          <p>{post.strain}</p>
-        </span>
-        <p>{post.title}</p>
+        <p>
+          <span className="text-xl text-bold justify-center">{post.strain}</span>
+          <span>{post.title}</span>
+        </p>
         <Likes post={post} addOptimisticPost={addOptimisticPost} />
       </div>
     </div>
