@@ -17,7 +17,8 @@ export default async function Login() {
   }
 
   return (
-    <div className="flex-1 flex justify-center items-center">
+    <div className="flex-1 flex flex-col justify-center items-center border border-gray-800">
+      <h1 className="font-bold text-xl">LOGIN WITH GITHUB</h1>
       <GitHubButton />
     </div>
   );
