@@ -36,8 +36,8 @@ export default function NewPost({ user }: { user: User }) {
           className="bg-inherit flex-1 ml-2 text-2xl leading-loose placeholder-gray-500 px-2"
           placeholder="Was it salty or what?"
         />
-        <input type="submit" />
       </div>
+      <input type="submit" className="bg-inherit border border-gray-800 rounded-lg"/>
     </form>
   );
 }
